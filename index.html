@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sweety Beauty – Beauty Salon</title>
+    <title>Sweety Beauty – Beauty Salon & Formations</title>
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <style>
@@ -29,33 +28,25 @@
         }
 
         body {
-            font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            background: radial-gradient(circle at top left, #ffe9f4 0, #fff6fb 40%, #ffffff 100%);
+            font-family: "Poppins", system-ui, sans-serif;
+            background: var(--rose-fond);
             color: var(--texte);
             line-height: 1.6;
+            scroll-behavior: smooth;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
-        }
-
-        img {
-            max-width: 100%;
-            display: block;
-        }
-
-        /* Layout global */
+        a { text-decoration: none; color: inherit; }
 
         .container {
             width: min(1200px, 94%);
             margin: 0 auto;
         }
 
+        /* HEADER */
         header {
             position: sticky;
             top: 0;
-            z-index: 999;
+            z-index: 30;
             backdrop-filter: blur(18px);
             background: rgba(255, 246, 251, 0.9);
             border-bottom: 1px solid rgba(255, 111, 168, 0.15);
@@ -68,72 +59,17 @@
             padding: 14px 0;
         }
 
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .logo-circle {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: radial-gradient(circle at 30% 20%, #ffe9f4 0, #ffb3d3 40%, #f472b6 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--blanc);
-            font-family: "Playfair Display", serif;
-            font-size: 20px;
-            box-shadow: 0 8px 20px rgba(244, 114, 182, 0.45);
-        }
-
-        .logo-text-main {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            letter-spacing: 0.04em;
-        }
-
-        .logo-text-sub {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.14em;
-            color: var(--prune-soft);
-        }
-
         nav ul {
             display: flex;
-            list-style: none;
             gap: 26px;
+            list-style: none;
             font-size: 14px;
-        }
-
-        nav a {
-            position: relative;
-            padding-bottom: 4px;
-        }
-
-        nav a::after {
-            content: "";
-            position: absolute;
-            left: 0;
-            bottom: 0;
-            width: 0;
-            height: 2px;
-            border-radius: 999px;
-            background: linear-gradient(90deg, var(--rose-vif), var(--prune-soft));
-            transition: width 0.22s ease-out;
-        }
-
-        nav a:hover::after {
-            width: 100%;
         }
 
         .btn-primary {
             display: inline-flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
             padding: 10px 22px;
             border-radius: 999px;
             border: none;
@@ -143,554 +79,178 @@
             font-size: 14px;
             font-weight: 500;
             box-shadow: 0 12px 28px rgba(240, 82, 150, 0.4);
-            transition: transform 0.15s ease-out, box-shadow 0.15s ease-out;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-1px);
-            box-shadow: 0 14px 34px rgba(240, 82, 150, 0.45);
-        }
-
-        .btn-outline {
-            display: inline-flex;
+        /* HERO VIDEO */
+        .video-hero {
+            position: relative;
+            height: 460px;
+            display: flex;
             align-items: center;
             justify-content: center;
-            padding: 9px 20px;
-            border-radius: 999px;
-            border: 1px solid rgba(106, 32, 67, 0.28);
-            background: rgba(255, 255, 255, 0.72);
-            backdrop-filter: blur(10px);
-            font-size: 13px;
-            color: var(--prune);
-            cursor: pointer;
-            transition: background 0.15s ease-out, transform 0.15s ease-out, box-shadow 0.15s ease-out;
-        }
-
-        .btn-outline:hover {
-            background: var(--rose-pale);
-            box-shadow: 0 8px 22px rgba(106, 32, 67, 0.18);
-            transform: translateY(-1px);
-        }
-
-        /* HERO */
-
-        .hero {
-            padding: 70px 0 40px;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-            gap: 60px;
-            align-items: center;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 6px 14px;
-            border-radius: 999px;
-            background: rgba(255, 233, 244, 0.95);
-            border: 1px solid rgba(255, 111, 168, 0.28);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--prune-soft);
-            margin-bottom: 16px;
-        }
-
-        .badge-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #f973b9, #fb7185);
-            box-shadow: 0 0 0 6px rgba(248, 113, 181, 0.25);
-        }
-
-        .hero h1 {
-            font-family: "Playfair Display", serif;
-            font-size: clamp(34px, 5vw, 45px);
-            margin-bottom: 14px;
-            color: var(--prune);
-        }
-
-        .hero h1 span {
-            color: var(--rose-vif);
-        }
-
-        .hero-subtitle {
-            font-size: 15px;
-            max-width: 480px;
-            color: #664058;
-            margin-bottom: 22px;
-        }
-
-        .hero-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            align-items: center;
-            margin-bottom: 18px;
-        }
-
-        .hero-mini {
-            font-size: 12px;
-            color: #7b5065;
-        }
-
-        .hero-mini strong {
-            color: var(--prune-soft);
-        }
-
-        .hero-card {
-            position: relative;
-            border-radius: 34px;
-            padding: 26px 24px;
-            background: linear-gradient(145deg, rgba(255, 250, 252, 0.96), rgba(255, 219, 237, 0.9));
-            box-shadow: var(--ombre-soft);
             overflow: hidden;
         }
 
-        .hero-card::before {
-            content: "";
+        .video-bg {
             position: absolute;
-            width: 160px;
-            height: 160px;
-            background: radial-gradient(circle at 20% 0, rgba(255, 255, 255, 0.9) 0, rgba(255, 192, 218, 0.0) 70%);
-            top: -40px;
-            right: -30px;
-            opacity: 0.8;
+            inset: 0;
+            z-index: -1;
         }
 
-        .hero-card-tag {
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 0.12em;
-            color: #f973b9;
-            margin-bottom: 6px;
+        .video-bg iframe {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            pointer-events: none;
+            border: none;
         }
 
-        .hero-card-title {
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            max-width: 800px;
+        }
+
+        .hero-text h1 {
             font-family: "Playfair Display", serif;
-            font-size: 20px;
-            margin-bottom: 10px;
-            color: var(--prune);
+            font-size: 54px;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.6);
         }
 
-        .hero-card-list {
-            font-size: 13px;
-            color: #704258;
+        .hero-text p {
+            font-size: 16px;
+            margin-bottom: 30px;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.6);
         }
 
-        .hero-card-list li {
-            margin-bottom: 4px;
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
         }
 
-        /* Sections génériques */
-
+        /* SECTION TITLES */
         section {
-            padding: 40px 0;
+            padding: 60px 0;
         }
 
         .section-title {
             text-align: center;
-            margin-bottom: 28px;
+            margin-bottom: 40px;
         }
 
         .section-title h2 {
             font-family: "Playfair Display", serif;
-            font-size: 26px;
-            margin-bottom: 6px;
+            font-size: 32px;
+            margin-bottom: 8px;
             color: var(--prune);
         }
 
-        .section-title p {
-            font-size: 13px;
-            color: #7f5168;
-        }
-
-        /* Carte services */
-
-        .grid-3 {
+        /* TARIFS ZIGZAG GRID */
+        .tarifs-grid-zigzag {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 22px;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px 30px;
+            align-items: start;
+            margin-top: 20px;
         }
 
-        .card {
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: var(--rayon);
-            padding: 20px 18px;
-            box-shadow: var(--ombre-soft);
-            border: 1px solid rgba(255, 188, 214, 0.65);
+        .tarifs-card-block {
+            background: white;
+            padding: 24px;
+            border-radius: 18px;
+            box-shadow: 0 8px 18px rgba(116, 34, 82, 0.12);
+            border: 1px solid rgba(255, 188, 214, 0.5);
         }
 
-        .card h3 {
-            font-size: 17px;
-            margin-bottom: 8px;
-            color: var(--prune-soft);
-        }
-
-        .card ul {
-            list-style: none;
-            font-size: 13px;
-            color: #6c4358;
-        }
-
-        .card ul li::before {
-            content: "•";
-            color: #f973b9;
-            margin-right: 6px;
-        }
-
-        /* Formations */
-
-        .formations-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 18px;
-        }
-
-        .formation-card {
-            background: linear-gradient(140deg, #fff, #ffe5f3);
-            border-radius: var(--rayon);
-            padding: 18px 16px 16px;
-            box-shadow: var(--ombre-soft);
-            border: 1px solid rgba(255, 190, 215, 0.7);
-        }
-
-        .formation-month {
-            font-size: 11px;
-            font-weight: 600;
-            letter-spacing: 0.18em;
-            text-transform: uppercase;
-            color: #f973b9;
-            margin-bottom: 6px;
-        }
-
-        .formation-title {
-            font-size: 15px;
-            font-weight: 600;
-            color: var(--prune);
-            margin-bottom: 4px;
-        }
-
-        .formation-price {
-            font-size: 14px;
-            color: #8b4367;
-            margin-bottom: 6px;
-        }
-
-        .formation-tag {
-            display: inline-block;
-            padding: 3px 9px;
-            border-radius: 999px;
-            background: rgba(248, 113, 181, 0.08);
-            font-size: 11px;
-            color: #f973b9;
-            margin-bottom: 8px;
-        }
-
-        .formation-dates {
-            font-size: 12px;
-            color: #6b4456;
-        }
-
-        /* Offres */
-
-        .offre-wrapper {
-            display: grid;
-            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-            gap: 22px;
-            align-items: center;
-        }
-
-        .offre-main {
-            background: linear-gradient(135deg, #ffebf5, #ffd1e7);
-            border-radius: 32px;
-            padding: 24px 22px;
-            box-shadow: var(--ombre-soft);
-            border: 1px solid rgba(244, 114, 182, 0.4);
-        }
-
-        .offre-main h3 {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            margin-bottom: 4px;
-            color: var(--prune);
-        }
-
-        .offre-badge {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 999px;
-            font-size: 11px;
-            background: rgba(0, 0, 0, 0.8);
-            color: var(--blanc);
-            margin-bottom: 8px;
-        }
-
-        .offre-price {
-            font-size: 36px;
-            font-weight: 700;
-            color: var(--blanc);
-            text-shadow: 0 7px 16px rgba(220, 38, 122, 0.6);
-            margin-right: 10px;
-        }
-
-        .offre-price-old {
-            font-size: 15px;
-            color: rgba(255, 255, 255, 0.88);
-            text-decoration: line-through;
-        }
-
-        .offre-paragraph {
-            font-size: 14px;
-            color: #5c3747;
-            margin-top: 10px;
-        }
-
-        .offre-paragraph strong {
-            color: var(--prune-soft);
-        }
-
-        .offre-footer {
-            font-size: 11px;
-            margin-top: 12px;
-            color: #7a4b5d;
-        }
-
-        .offre-side {
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 26px;
-            padding: 18px 18px 16px;
-            box-shadow: var(--ombre-soft);
-            border: 1px solid rgba(255, 188, 214, 0.8);
-            font-size: 13px;
-        }
-
-        /* Lashes */
-
-        .lashes-grid {
-            display: grid;
-            grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-            gap: 26px;
-            align-items: center;
-        }
-
-        .lashes-card {
-            background: rgba(255, 255, 255, 0.96);
-            border-radius: 32px;
-            padding: 22px 22px;
-            box-shadow: var(--ombre-soft);
-            border: 1px solid rgba(255, 188, 214, 0.7);
-        }
-
-        .lashes-card h3 {
+        .tarifs-card-block h3 {
             font-family: "Playfair Display", serif;
             font-size: 20px;
-            margin-bottom: 8px;
-            color: var(--prune-soft);
-        }
-
-        .lashes-card p {
-            font-size: 14px;
-            color: #6c4358;
-            margin-bottom: 10px;
-        }
-
-        .lashes-tag {
-            display: inline-block;
-            padding: 4px 12px;
-            border-radius: 999px;
-            background: rgba(0, 0, 0, 0.9);
-            color: var(--blanc);
-            font-size: 11px;
-            margin-bottom: 8px;
-        }
-
-        .lashes-limit {
-            font-size: 12px;
-            color: #f973b9;
-            font-weight: 500;
-        }
-
-        /* RENDEZ-VOUS GOOGLE AGENDA – MÉTHODE 1 */
-
-        .rdv-wrapper {
-            display: grid;
-            grid-template-columns: minmax(0, 1.1fr);
-            /* une seule colonne, on a supprimé le module / aperçu à droite */
-            gap: 24px;
-        }
-
-        .rdv-card {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 32px;
-            padding: 26px 24px;
-            box-shadow: var(--ombre-soft);
-            border: 1px solid rgba(255, 188, 214, 0.9);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .rdv-card::before {
-            content: "";
-            position: absolute;
-            width: 220px;
-            height: 220px;
-            right: -120px;
-            bottom: -120px;
-            border-radius: 50%;
-            background: radial-gradient(circle, rgba(255, 182, 210, 0.9), rgba(255, 182, 210, 0));
-            opacity: 0.9;
-        }
-
-        .rdv-title {
-            font-family: "Playfair Display", serif;
-            font-size: 22px;
-            margin-bottom: 4px;
+            margin-bottom: 14px;
             color: var(--prune);
         }
 
-        .rdv-subtitle {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: #f973b9;
-            margin-bottom: 12px;
-        }
-
-        .rdv-text {
-            font-size: 14px;
-            color: #6f4159;
-            max-width: 620px;
-            margin-bottom: 14px;
-        }
-
-        .rdv-list {
-            list-style: none;
-            font-size: 13px;
-            color: #6a3f54;
-            margin-bottom: 16px;
-        }
-
-        .rdv-list li {
-            margin-bottom: 4px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .rdv-bullet {
-            width: 8px;
-            height: 8px;
-            border-radius: 999px;
-            background: linear-gradient(135deg, #f973b9, #fb7185);
-        }
-
-        .rdv-hint {
-            font-size: 12px;
-            color: #8b5a6f;
-            margin-top: 13px;
-        }
-
-        .rdv-hint span {
-            font-weight: 600;
+        .tarifs-card-block h4 {
+            font-size: 15px;
             color: var(--prune-soft);
-        }
-
-        .btn-rdv {
-            margin-top: 6px;
-        }
-
-        /* CONTACT */
-
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-            gap: 24px;
-            align-items: flex-start;
-        }
-
-        .contact-info {
-            font-size: 14px;
-            color: #6f4159;
-        }
-
-        .contact-info p {
+            margin-top: 15px;
             margin-bottom: 8px;
         }
 
-        .contact-tag {
-            display: inline-block;
-            padding: 4px 10px;
-            border-radius: 999px;
-            background: rgba(255, 233, 244, 0.95);
-            border: 1px solid rgba(255, 188, 214, 0.7);
-            font-size: 11px;
-            margin-bottom: 10px;
-            color: #c02675;
+        .tarifs-card-block ul { list-style: none; }
+
+        .tarifs-card-block li {
+            display: flex;
+            justify-content: space-between;
+            padding: 6px 0;
+            border-bottom: 1px dotted var(--rose-pale);
+            font-size: 14px;
+            color: #5c3747;
         }
 
-        form {
-            background: rgba(255, 255, 255, 0.98);
-            border-radius: 26px;
-            padding: 18px 18px;
-            box-shadow: var(--ombre-soft);
-            border: 1px solid rgba(255, 188, 214, 0.8);
+        .tarifs-price {
+            font-weight: 600;
+            color: var(--rose-vif);
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 10px;
-            margin-bottom: 10px;
+        /* IFRAMES XXL + WIDE + OVERLAY ROSE */
+        .zigzag-iframe {
+            position: relative;
+            width: 110%;
+            height: 420px;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 10px 28px rgba(0,0,0,0.16);
+            margin-left: -5%;
+            margin-right: -5%;
         }
 
-        .form-group {
-            margin-bottom: 10px;
+        /* SUPPRESSION DU ZOOM */
+        .zigzag-iframe iframe {
+            width: 100% !important;
+            height: 100% !important;
+            border: none;
+            transform: none;
         }
 
-        label {
-            display: block;
-            font-size: 12px;
-            margin-bottom: 3px;
-            color: #7b4c62;
+        /* overlay dégradé rose */
+        .zigzag-iframe::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                135deg,
+                rgba(255, 111, 168, 0.35),
+                rgba(255, 111, 168, 0.15)
+            );
+            pointer-events: none;
+            z-index: 5;
         }
 
-        input,
-        textarea {
-            width: 100%;
-            padding: 9px 10px;
-            border-radius: 12px;
-            border: 1px solid rgba(148, 27, 89, 0.15);
-            font-family: inherit;
-            font-size: 13px;
-            outline: none;
-            background: rgba(255, 246, 251, 0.8);
-            transition: border-color 0.15s ease-out, box-shadow 0.15s ease-out, background 0.15s ease-out;
+        /* RESPONSIVE */
+        @media(max-width: 850px){
+            .tarifs-grid-zigzag {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+
+            .zigzag-iframe {
+                width: 100%;
+                height: 260px;
+                margin: 0 auto;
+            }
         }
 
-        input:focus,
-        textarea:focus {
-            border-color: rgba(236, 72, 153, 0.7);
-            box-shadow: 0 0 0 1px rgba(236, 72, 153, 0.35);
-            background: #ffffff;
-        }
-
-        textarea {
-            resize: vertical;
-            min-height: 90px;
-        }
-
-        .btn-contact {
-            margin-top: 6px;
+        @media(max-width: 500px){
+            .zigzag-iframe {
+                height: 200px;
+            }
         }
 
         /* FOOTER */
-
         footer {
             padding: 24px 0 26px;
             text-align: center;
@@ -702,347 +262,224 @@
             color: #f973b9;
         }
 
-        /* Responsive */
-
-        @media (max-width: 960px) {
-            .hero-grid,
-            .offre-wrapper,
-            .lashes-grid,
-            .contact-wrapper {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            .hero {
-                padding-top: 40px;
-            }
-
-            nav ul {
-                display: none; /* pour simplifier, pas de menu mobile complexe ici */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .grid-3,
-            .formations-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-        }
-
-        @media (max-width: 576px) {
-            .grid-3,
-            .formations-grid {
-                grid-template-columns: minmax(0, 1fr);
-            }
-
-            .hero-card {
-                margin-top: 12px;
-            }
-
-            .section-title h2 {
-                font-size: 22px;
-            }
-
-            .offre-main {
-                padding: 20px 18px;
-            }
-        }
     </style>
 </head>
+
 <body>
 
-    <!-- HEADER -->
-    <header>
-        <div class="container navbar">
-            <div class="logo">
-                <div class="logo-circle">SB</div>
-                <div>
-                    <div class="logo-text-main">Sweety Beauty</div>
-                    <div class="logo-text-sub">Beauty Salon &amp; Formations</div>
-                </div>
-            </div>
+<!-- HEADER -->
+<header>
+    <div class="container navbar">
+        <div class="logo-text-main" style="font-family:'Playfair Display',serif;font-size:24px;color:#6a2043;">Sweety Beauty</div>
+        <nav>
+            <ul>
+                <li><a href="#tarifs">Prestations</a></li>
+                <li><a href="#formations">Formations</a></li>
+                <li><a href="#rdv">Rendez-vous</a></li>
+                
+            </ul>
+        </nav>
+        <a href="#rdv" class="btn-primary">Réserver</a>
+    </div>
+</header>
 
-            <nav>
+<!-- HERO + VIDEO -->
+<section class="video-hero">
+    <div class="video-bg">
+        <iframe loading="lazy"
+        src="https://www.canva.com/design/DAG6XjDgMtk/o60b3eRLwTUD6obWJ9WH7w/watch?embed&autoplay=1&loop=1&mute=1&controls=0"
+        allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+
+    <div class="container hero-content">
+        <div class="hero-text">
+            <h1>L'Excellence de la Beauté à Votre Portée.</h1>
+            <p>Découvrez nos soins esthétiques personnalisés.</p>
+
+            <div class="hero-buttons">
+                <a href="#tarifs" class="btn-primary">Voir Tarifs</a>
+                <a href="#formations" class="btn-primary" style="background:#fff;color:#6a2043;">Nos Formations</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- TARIFS -->
+<section id="tarifs">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Tarifs Détaillés de nos Prestations</h2>
+            <p>Trouvez le soin qui vous convient.</p>
+        </div>
+
+        <div class="tarifs-grid-zigzag">
+
+            <!-- Bloc 1 -->
+            <div class="tarifs-card-block">
+                <h3>Épilation (Prix à l'unité)</h3>
+
+                <h4>Visage</h4>
                 <ul>
-                    <li><a href="#prestations">Prestations</a></li>
-                    <li><a href="#formations">Formations</a></li>
-                    <li><a href="#offres">Offres</a></li>
-                    <li><a href="#lashes">Lashes</a></li>
-                    <li><a href="#rdv">Rendez-vous</a></li>
-                    <li><a href="#contact">Contact</a></li>
+                    <li><span>Création de sourcils</span><span class="tarifs-price">19 €</span></li>
+                    <li><span>Sourcils (nettoyage ligne)</span><span class="tarifs-price">11 €</span></li>
+                    <li><span>Joues</span><span class="tarifs-price">11 €</span></li>
+                    <li><span>Lèvres</span><span class="tarifs-price">11 €</span></li>
+                    <li><span>Nez</span><span class="tarifs-price">11 €</span></li>
+                    <li><span>Oreilles</span><span class="tarifs-price">12 €</span></li>
+                    <li><span>Cou</span><span class="tarifs-price">13 €</span></li>
                 </ul>
-            </nav>
 
-            <a href="#rdv" class="btn-primary">Prendre RDV</a>
-        </div>
-    </header>
+                <h4>Corps</h4>
+                <ul>
+                    <li><span>Aisselles</span><span class="tarifs-price">13 €</span></li>
+                    <li><span>Poitrine</span><span class="tarifs-price">13 €</span></li>
+                    <li><span>Ventre</span><span class="tarifs-price">13 €</span></li>
+                    <li><span>Dos</span><span class="tarifs-price">15 €</span></li>
+                    <li><span>Sillon fessier</span><span class="tarifs-price">15 €</span></li>
+                    <li><span>Fesses</span><span class="tarifs-price">20 €</span></li>
+                </ul>
 
-    <!-- HERO -->
-    <section class="hero">
-        <div class="container hero-grid">
-            <div>
-                <div class="badge">
-                    <span class="badge-dot"></span>
-                    <span>Institut &amp; Centre de formation</span>
-                </div>
-
-                <h1>Élégance &amp; douceur chez <span>Sweety Beauty</span></h1>
-
-                <p class="hero-subtitle">
-                    Salon d’esthétique spécialisé dans les soins du visage, épilations, ongles, coiffure et extensions de cils.  
-                    Formations professionnelles pour débutants acceptés.
-                </p>
-
-                <div class="hero-actions">
-                    <a href="#rdv" class="btn-primary">Réserver un créneau</a>
-                    <a href="#prestations" class="btn-outline">Voir les prestations</a>
-                </div>
-
-                <div class="hero-mini">
-                    ✓ Forfait épilation illimité dès <strong>49 €/mois</strong> – offres spéciales Black Friday &amp; Beauty Lashes.
-                </div>
-            </div>
-
-            <div class="hero-card">
-                <div class="hero-card-tag">Forfait épilation illimité</div>
-                <div class="hero-card-title">Toutes les zones à seulement 49,00 € / mois</div>
-                <ul class="hero-card-list">
-                    <li>Épilations illimitées pendant le mois</li>
-                    <li>Zones au choix selon vos besoins</li>
-                    <li>Suivi personnalisé et conseil beauté</li>
+                <h4>Jambes & Bras</h4>
+                <ul>
+                    <li><span>Demi-bras</span><span class="tarifs-price">12 €</span></li>
+                    <li><span>Bras</span><span class="tarifs-price">20 €</span></li>
+                    <li><span>Demi-jambes</span><span class="tarifs-price">15 €</span></li>
+                    <li><span>Jambes entières</span><span class="tarifs-price">25 €</span></li>
                 </ul>
             </div>
+
+            <!-- iframe 1 -->
+            <div class="zigzag-iframe">
+                <iframe loading="lazy"
+                  src="https://www.canva.com/design/DAG6XwSfd14/MD2sdR0gzWdkcMnzI2tKXw/view?embed"
+                  allowfullscreen></iframe>
+            </div>
+
+            <!-- iframe 2 -->
+            <div class="zigzag-iframe">
+                <iframe loading="lazy"
+                  src="https://www.canva.com/design/DAG6X5MGEdA/pb-qhklVlb3ISXgf9aTezg/view?embed"
+                  allowfullscreen></iframe>
+            </div>
+
+            <!-- Bloc 2 -->
+            <div class="tarifs-card-block">
+                <h3>Extensions de Cils</h3>
+
+                <h4>Bouquet</h4>
+                <ul>
+                    <li><span>Pose</span><span class="tarifs-price">30 €</span></li>
+                    <li><span>Volume 1</span><span class="tarifs-price">30 €</span></li>
+                    <li><span>Volume 2</span><span class="tarifs-price">45 €</span></li>
+                    <li><span>Volume 3</span><span class="tarifs-price">55 €</span></li>
+                </ul>
+
+                <h4>Cil à Cil</h4>
+                <ul>
+                    <li><span>Volume 1</span><span class="tarifs-price">80 €</span></li>
+                    <li><span>Volume 2</span><span class="tarifs-price">110 €</span></li>
+                    <li><span>Volume 3</span><span class="tarifs-price">130 €</span></li>
+                </ul>
+
+                <h3 style="margin-top:25px;">Minceur</h3>
+                <ul>
+                    <li><span>Palpé-roulé / séance</span><span class="tarifs-price">70 €</span></li>
+                    <li><span>Maderothérapie / séance</span><span class="tarifs-price">90 €</span></li>
+                    <li><span>Cryothérapie / séance</span><span class="tarifs-price">95 €</span></li>
+                    <li><span>Suivi alimentaire</span><span class="tarifs-price">40 €</span></li>
+                </ul>
+
+                <h3 style="margin-top:25px;">Skin Care</h3>
+                <ul>
+                    <li><span>Sweet Skin S</span><span class="tarifs-price">55 €</span></li>
+                    <li><span>Sweet Skin M</span><span class="tarifs-price">65 €</span></li>
+                    <li><span>Sweet Skin L</span><span class="tarifs-price">80 €</span></li>
+                    <li><span>Sweet Skin XL</span><span class="tarifs-price">90 €</span></li>
+                    <li><span>Dermabrasion</span><span class="tarifs-price">95 €</span></li>
+                </ul>
+            </div>
+
+            <!-- Bloc 3 -->
+            <div class="tarifs-card-block">
+                <h3>Forfaits Épilation</h3>
+                <ul>
+                    <li><span>Forfait simple</span><span class="tarifs-price">20 €</span></li>
+                    <li><span>Forfait schéma</span><span class="tarifs-price">23 €</span></li>
+                    <li><span>Forfait Brésilien</span><span class="tarifs-price">25 €</span></li>
+                    <li><span>Forfait intégral</span><span class="tarifs-price">29 €</span></li>
+                    <li><span>Barbe</span><span class="tarifs-price">19 €</span></li>
+                </ul>
+
+                <h3 style="margin-top:25px;">Coiffure Locks</h3>
+                <ul>
+                    <li><span>Traitement locks</span><span class="tarifs-price">70 €</span></li>
+                    <li><span>Coiffure locks S</span><span class="tarifs-price">60 €</span></li>
+                    <li><span>Coiffure locks M</span><span class="tarifs-price">70 €</span></li>
+                    <li><span>Coiffure locks L</span><span class="tarifs-price">85 €</span></li>
+                    <li><span>Coiffure locks XL</span><span class="tarifs-price">95 €</span></li>
+                    <li><span>Coiffure locks XXL</span><span class="tarifs-price">105 €</span></li>
+                </ul>
+            </div>
+
+            <!-- iframe 3 -->
+            <div class="zigzag-iframe">
+                <iframe loading="lazy"
+                  src="https://www.canva.com/design/DAG6X8fQa2k/drUsdhV4yIK2Sy9Csrl6nA/view?embed"
+                  allowfullscreen></iframe>
+            </div>
+
         </div>
-    </section>
 
-    <!-- PRESTATIONS -->
-    <section id="prestations">
-        <div class="container">
-            <div class="section-title">
-                <h2>Nos prestations</h2>
-                <p>Tout l’univers Sweety Beauty au même endroit.</p>
-            </div>
+    </div>
+</section>
 
-            <div class="grid-3">
-                <div class="card">
-                    <h3>Soin &amp; Diagnostic</h3>
-                    <ul>
-                        <li>Soin du visage</li>
-                        <li>Skin care &amp; soins amincissants</li>
-                        <li>Diagnostic de peau personnalisé</li>
-                        <li>Massages relaxants</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Mains &amp; Pieds</h3>
-                    <ul>
-                        <li>Beauté des mains</li>
-                        <li>Beauté des pieds</li>
-                        <li>Pose d’ongles</li>
-                        <li>Nail arts &amp; extensions de cils</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>Coiffure &amp; Locks</h3>
-                    <ul>
-                        <li>Coupes mixtes &amp; tresses</li>
-                        <li>Lissages brésilien &amp; au tannin</li>
-                        <li>Tissages &amp; braids</li>
-                        <li>Locks : traitement, styles, entretien</li>
-                    </ul>
-                </div>
-            </div>
+<!-- FORMATIONS -->
+<section id="formations">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Devenez Experte Beauté</h2>
+            <p>Nos programmes de formation certifiants et intensifs.</p>
         </div>
-    </section>
 
-    <!-- FORMATIONS -->
-    <section id="formations">
-        <div class="container">
-            <div class="section-title">
-                <h2>Formations Sweety Beauty</h2>
-                <p>Débutants acceptés – développez vos compétences.</p>
+        <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:30px;">
+
+            <div class="tarifs-card-block">
+                <h3>Formation Extensions de Cils</h3>
+                <p>Maîtrisez les techniques de pose de cils.</p>
+                <p style="margin-top: 15px; font-weight: 600; color: var(--rose-vif);">Certification incluse.</p>
             </div>
 
-            <div class="formations-grid">
-                <div class="formation-card">
-                    <div class="formation-month">Novembre / Décembre</div>
-                    <div class="formation-title">Maderothérapie</div>
-                    <div class="formation-price">200,00 €</div>
-                    <div class="formation-tag">Débutant accepté</div>
-                    <div class="formation-dates">
-                        Sessions sur plusieurs dates – nous contacter pour le planning détaillé.
-                    </div>
-                </div>
-                <div class="formation-card">
-                    <div class="formation-month">Novembre / Décembre</div>
-                    <div class="formation-title">Gel X + Popit + Acrygel</div>
-                    <div class="formation-price">250,00 €</div>
-                    <div class="formation-tag">Débutant accepté</div>
-                    <div class="formation-dates">
-                        Groupes de 13–14 personnes maximum, plusieurs sessions chaque mois.
-                    </div>
-                </div>
-                <div class="formation-card">
-                    <div class="formation-month">Novembre / Décembre</div>
-                    <div class="formation-title">Nails Art</div>
-                    <div class="formation-price">150,00 €</div>
-                    <div class="formation-tag">Débutant accepté</div>
-                    <div class="formation-dates">
-                        Création de designs, techniques de nail art &amp; perfectionnement.
-                    </div>
-                </div>
+            <div class="tarifs-card-block">
+                <h3>Formation Épilation Orientale</h3>
+                <p>Apprenez l'épilation au fil et à la cire orientale.</p>
+                <p style="margin-top: 15px; font-weight: 600; color: var(--rose-vif);">Kit offert.</p>
             </div>
+
         </div>
-    </section>
 
-    <!-- OFFRES SPECIALES -->
-    <section id="offres">
-        <div class="container">
-            <div class="section-title">
-                <h2>Offres exceptionnelles</h2>
-                <p>Profitez de nos promos limitées dans le temps.</p>
-            </div>
+    </div>
+</section>
 
-            <div class="offre-wrapper">
-                <div class="offre-main">
-                    <div class="offre-badge">Black Friday</div>
-                    <h3>Forfait épilations 3 mois</h3>
-                    <div style="display:flex;align-items:flex-end;gap:8px;margin:8px 0 4px;">
-                        <div class="offre-price">29,99 €</div>
-                        <div class="offre-price-old">au lieu de 49,90 €</div>
-                    </div>
-                    <p class="offre-paragraph">
-                        Vos épilations à seulement <strong>29,99 € / mois pendant 3 mois</strong> !
-                        Offre valable jusqu’au 05/12/2025.
-                    </p>
-                    <p class="offre-footer">
-                        By Sweety Beauty – Téléphone : 0590 46 83 96 / 07 87 84 28 13
-                    </p>
-                </div>
-
-                <div class="offre-side">
-                    <strong>Pourquoi ce forfait&nbsp;?</strong><br />
-                    • Réduction immédiate sur plusieurs mois<br />
-                    • Idéal pour rester impeccable tout l’hiver<br />
-                    • Gestion simple via votre abonnement mensuel<br /><br />
-                    Pour profiter au mieux de l’offre, pensez à réserver vos créneaux en avance
-                    dans la section <strong>Prendre rendez-vous</strong>.
-                </div>
-            </div>
+<!-- RDV -->
+<section id="rdv" style="text-align:center;padding:60px 0;">
+    <div class="container">
+        <div class="section-title">
+            <h2>Prête pour votre transformation ?</h2>
+            <p>Réservez votre moment de beauté dès maintenant.</p>
         </div>
-    </section>
+        <a href="#" class="btn-primary" style="font-size:18px;padding:14px 30px;">
+            Prendre Rendez-vous en Ligne
+        </a>
+    </div>
+</section>
 
-    <!-- LASHES -->
-    <section id="lashes">
-        <div class="container">
-            <div class="section-title">
-                <h2>Beauty Lashes</h2>
-                <p>Extensions de cils &amp; regard intense.</p>
-            </div>
 
-            <div class="lashes-grid">
-                <div class="lashes-card">
-                    <div class="lashes-tag">Places limitées</div>
-                    <h3>Eyelash Extensions</h3>
-                    <p>
-                        Toutes vos poses de cils à <strong>50,00 €</strong> jusqu’au
-                        <strong>03/12/2025</strong>.  
-                        Différents effets possibles selon votre style : naturel, glamour, volume…
-                    </p>
-                    <p class="lashes-limit">
-                        ➜ Réservation obligatoire – les créneaux partent très vite.
-                    </p>
-                </div>
-
-                <div>
-                    <!-- Ici tu peux mettre une vraie photo dans ton projet si tu veux -->
-                    <div style="border-radius:32px;background:linear-gradient(135deg,#fdf2f8,#f9a8d4);height:220px;display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Playfair Display',serif;font-size:22px;box-shadow:var(--ombre-soft);">
-                        Sweety Beauty<br/>Lashes
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RENDEZ-VOUS GOOGLE AGENDA (MÉTHODE 1, SANS MODULE DROITE) -->
-    <section id="rdv">
-        <div class="container">
-            <div class="section-title">
-                <h2>Prendre rendez-vous</h2>
-                <p>Synchronisé avec Google Agenda – réservation en ligne rapide.</p>
-            </div>
-
-            <div class="rdv-wrapper">
-                <div class="rdv-card">
-                    <div class="rdv-subtitle">Réservez votre créneau en ligne</div>
-                    <div class="rdv-title">Rendez-vous via Google Agenda</div>
-
-                    <p class="rdv-text">
-                        La prise de rendez-vous se fait directement via notre calendrier
-                        <strong>Google Agenda</strong>.  
-                        Vous choisissez le créneau qui vous convient, et il est ajouté
-                        immédiatement à notre planning.
-                    </p>
-
-                    <ul class="rdv-list">
-                        <li>
-                            <span class="rdv-bullet"></span>
-                            <span>Visualisez les disponibilités en temps réel</span>
-                        </li>
-                        <li>
-                            <span class="rdv-bullet"></span>
-                            <span>Réservation simple et rapide en quelques clics</span>
-                        </li>
-                        <li>
-                            <span class="rdv-bullet"></span>
-                            <span>Confirmation et rappel via votre compte Google</span>
-                        </li>
-                    </ul>
-
-                    <!-- Méthode 1 : simple bouton qui ouvre ton planning public Google Agenda -->
-                    <a class="btn-primary btn-rdv"
-                       href="https://calendar.google.com/calendar/u/0/r/week/2025/11/28?pli=1"
-                       target="_blank" rel="noopener noreferrer">
-                        Ouvrir le calendrier
-                    </a>
-
-                    <p class="rdv-hint">
-                        Astuce : dans Google Agenda, crée un <span>lien de prise de rendez-vous public</span>
-                        (créneaux de rendez-vous) puis remplace l’URL ci-dessus par ton lien public afin que
-                        tes clientes puissent réserver sans être connectées à ton compte.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Contact &amp; informations</h2>
-                <p>Une question avant de réserver ? Écris-nous directement.</p>
-            </div>
-
-            <div class="contact-wrapper">
-                <div class="contact-info">
-                    <div class="contact-tag">Sweety Beauty – Beauty Salon</div>
-                    <p><strong>Téléphone :</strong> 0590 46 83 96 / 07 87 84 28 13</p>
-                    <p><strong>E-mail :</strong> recrutementsweetybeauty@outlook.com</p>
-                    <p><strong>Instagram :</strong> @sweetybeauty971</p>
-                    <p style="margin-top:10px;">
-                        Pour toute question sur les formations, les offres en cours ou les disponibilités,
-                        tu peux aussi utiliser le formulaire ci-contre.  
-                        Le message sera envoyé vers notre adresse principale.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer>
-        © <span>Sweety Beauty</span> – Beauty Salon &amp; Formations. Tous droits réservés.
-    </footer>
+<!-- FOOTER -->
+<footer>
+    © 2025 <span>Sweety Beauty</span> – Tous droits réservés.
+</footer>
 
 </body>
 </html>
