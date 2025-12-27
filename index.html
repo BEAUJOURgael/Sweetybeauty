@@ -5,53 +5,44 @@
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>Sweety Beauty – Salon de beauté & Formations</title>
 
-<!-- SEO -->
-<meta name="description" content="Sweety Beauty – Salon de beauté en Guadeloupe : épilation, extensions de cils, soins visage, minceur et formations professionnelles. Réservation en ligne.">
-<meta name="keywords" content="sweety beauty, salon beauté, épilation, extensions de cils, soins visage, minceur, formations beauté, Guadeloupe">
-<meta name="robots" content="index,follow">
-
-<!-- Open Graph -->
-<meta property="og:title" content="Sweety Beauty – Salon de beauté & Formations">
-<meta property="og:description" content="Épilation, extensions de cils, soins visage, minceur et formations professionnelles en Guadeloupe.">
-<meta property="og:type" content="website">
+<meta name="description" content="Sweety Beauty – Salon de beauté en Guadeloupe : épilation, extensions de cils, soins visage, minceur et formations professionnelles.">
 
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
 
 <style>
+/* ================= BASE ================= */
 :root{
-  --rose:#ff6fa8;
-  --rose-pale:#ffe9f4;
-  --rose-fond:#fff6fb;
-  --prune:#6a2043;
-  --prune-soft:#9b5472;
-  --texte:#442436;
-  --ombre:0 12px 34px rgba(0,0,0,0.08);
+  --bois:#a47148;
+  --bois-fonce:#5a3a26;
+  --texte:#3a2a23;
+  --fond:rgba(255,255,255,.94);
+  --ombre:0 18px 45px rgba(0,0,0,.15);
 }
 
-*{margin:0;padding:0;box-sizing:border-box;}
+*{margin:0;padding:0;box-sizing:border-box}
 
 body{
   font-family:Poppins,sans-serif;
   color:var(--texte);
-  background:var(--rose-fond);
-  scroll-behavior:smooth;
+  background:
+    linear-gradient(rgba(255,255,255,.9),rgba(255,255,255,.9)),
+    url("https://images.unsplash.com/photo-1618220179428-22790b461013");
+  background-size:cover;
+  background-attachment:fixed;
 }
 
-/* CONTAINER */
-.container{
-  width:90%;
-  max-width:1200px;
-  margin:auto;
-}
+.container{width:90%;max-width:1200px;margin:auto}
 
-/* HEADER + NAVBAR */
+/* ================= HEADER ================= */
 header{
   position:sticky;
   top:0;
-  background:#fff6fbcc;
-  backdrop-filter:blur(12px);
-  z-index:999;
-  border-bottom:1px solid rgba(0,0,0,0.05);
+  z-index:1000;
+  background:
+    linear-gradient(rgba(255,255,255,.92),rgba(255,255,255,.92)),
+    url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3");
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(0,0,0,.08);
 }
 
 .navbar{
@@ -64,117 +55,75 @@ header{
 .logo{
   font-family:"Playfair Display",serif;
   font-size:24px;
-  color:var(--prune);
   font-weight:700;
+  color:var(--bois-fonce);
   text-decoration:none;
-}
-
-/* NAV */
-nav{
-  display:flex;
 }
 
 nav ul{
   list-style:none;
   display:flex;
   gap:26px;
-  align-items:center;
 }
 
 nav a{
   text-decoration:none;
-  color:var(--prune);
-  font-weight:500;
+  color:var(--bois-fonce);
   font-size:14px;
 }
 
-/* BTN */
 .btn-primary{
-  padding:10px 24px;
+  padding:10px 26px;
   border-radius:999px;
-  background:linear-gradient(135deg,#ff8fb8,#ff6fa8,#f05296);
+  background:linear-gradient(135deg,#cfa46a,#a47148,#7a4a2e);
   color:white;
-  font-size:14px;
-  font-weight:500;
   text-decoration:none;
   box-shadow:var(--ombre);
-  transition:transform 0.15s ease-out, box-shadow 0.15s ease-out;
-  display:inline-block;
 }
 
-.btn-primary:hover{
-  transform:translateY(-2px);
-  box-shadow:0 18px 38px rgba(240,82,150,0.35);
-}
-
-/* HAMBURGER */
-.hamburger{
-  display:none;
-  width:28px;
-  height:22px;
-  flex-direction:column;
-  justify-content:space-between;
-  cursor:pointer;
-  border:none;
-  background:none;
-  padding:0;
-}
-
-.hamburger span{
-  display:block;
-  height:3px;
-  border-radius:999px;
-  background:var(--prune);
-  transition:transform .2s ease,opacity .2s ease;
-}
-
-.hamburger.is-active span:nth-child(1){
-  transform:translateY(9px) rotate(45deg);
-}
-.hamburger.is-active span:nth-child(2){
-  opacity:0;
-}
-.hamburger.is-active span:nth-child(3){
-  transform:translateY(-9px) rotate(-45deg);
-}
-
-/* HERO */
+/* ================= HERO ================= */
 .hero{
   text-align:center;
-  padding:110px 0 80px;
+  padding:110px 0 90px;
 }
 
 .hero h1{
-  font-size:52px;
   font-family:"Playfair Display",serif;
-  color:var(--prune);
+  font-size:52px;
+  color:var(--bois-fonce);
 }
 
 .hero p{
-  margin:14px 0 28px;
+  margin:18px 0 30px;
   font-size:19px;
-  color:var(--prune-soft);
+  color:#6b4b35;
 }
 
-/* TITRES SECTION */
+/* ================= TITRES ================= */
 .section-title{
   text-align:center;
   font-family:"Playfair Display",serif;
   font-size:36px;
   margin-bottom:10px;
-  color:var(--prune);
+  color:var(--bois-fonce);
 }
 
 .section-subtitle{
   text-align:center;
   font-size:14px;
-  color:var(--prune-soft);
-  margin-bottom:34px;
+  margin-bottom:36px;
+  color:#7a5a45;
 }
 
-/* PRESTATIONS / TARIFS */
-.prestations{
-  padding:70px 0;
+/* ================= CARTES ================= */
+.card{
+  background:
+    linear-gradient(var(--fond),var(--fond)),
+    url("https://images.unsplash.com/photo-1582582494700-0f6f0f5c38ad");
+  background-size:cover;
+  border-radius:20px;
+  padding:22px;
+  box-shadow:var(--ombre);
 }
 
 .grid-3{
@@ -183,181 +132,80 @@ nav a{
   gap:24px;
 }
 
-.card{
-  background:white;
-  border-radius:18px;
-  padding:22px;
-  box-shadow:var(--ombre);
-  border:1px solid rgba(255,188,214,0.4);
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-
-.card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 40px rgba(0,0,0,0.12);
-}
-
 .card h3{
   font-family:"Playfair Display",serif;
   font-size:21px;
   margin-bottom:10px;
-  color:var(--prune);
+  color:var(--bois-fonce);
 }
 
 .card h4{
-  font-size:15px;
   margin-top:14px;
   margin-bottom:6px;
-  color:var(--prune-soft);
+  color:#7a5a45;
 }
 
-.card ul{
-  list-style:none;
-}
+.card ul{list-style:none}
 
 .card li{
   display:flex;
   justify-content:space-between;
-  align-items:center;
   padding:6px 0;
-  border-bottom:1px dotted var(--rose-pale);
+  border-bottom:1px dotted #d9c3a8;
   font-size:14px;
 }
 
 .price{
-  color:var(--rose);
+  color:var(--bois);
   font-weight:600;
 }
 
-/* REALISATIONS */
-.realisations{
-  padding:70px 0;
+/* ================= REALISATIONS ================= */
+.fade-gallery{
+  position:relative;
+  max-width:420px;
+  height:560px;
+  margin:0 auto;
 }
 
-.gallery{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:26px;
-}
-
-.gallery-item{
-  background:white;
-  border-radius:18px;
-  overflow:hidden;
-  height:430px;
-  box-shadow:var(--ombre);
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-
-.gallery-item:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 40px rgba(0,0,0,0.12);
-}
-
-.gallery-item iframe{
+.fade-gallery iframe{
+  position:absolute;
+  inset:0;
   width:100%;
   height:100%;
   border:none;
+  border-radius:22px;
+  box-shadow:0 25px 60px rgba(0,0,0,.35);
+  opacity:0;
+  animation:fadeShow 60s infinite;
 }
 
-/* ABOUT / FORMATIONS / FAQ / CONF */
-.section-wrapper{
-  padding:70px 0;
+.fade-gallery iframe:nth-child(1){animation-delay:0s}
+.fade-gallery iframe:nth-child(2){animation-delay:5s}
+.fade-gallery iframe:nth-child(3){animation-delay:5s}
+.fade-gallery iframe:nth-child(4){animation-delay:5s}
+
+@keyframes fadeShow{
+  0%{opacity:0}
+  5%{opacity:1}
+  25%{opacity:1}
+  30%{opacity:0}
+  100%{opacity:0}
 }
 
-.info-grid{
-  display:grid;
-  grid-template-columns:1fr;
-  gap:20px;
-}
-
-.info-card{
-  background:white;
-  border-radius:18px;
-  padding:22px;
-  box-shadow:var(--ombre);
-  border:1px solid rgba(255,188,214,0.4);
-  transition:transform .18s ease, box-shadow .18s ease;
-}
-
-.info-card:hover{
-  transform:translateY(-4px);
-  box-shadow:0 18px 40px rgba(0,0,0,0.12);
-}
-
-.info-card h3{
-  font-size:18px;
-  font-weight:600;
-  color:var(--prune);
-  margin-bottom:6px;
-}
-
-.info-card p{
-  font-size:15px;
-  color:#573a48;
-  line-height:1.7;
-}
-
-/* FORMATIONS GRID */
-.formations-grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:24px;
-}
-
-/* FOOTER */
+/* ================= FOOTER ================= */
 footer{
   margin-top:60px;
   padding:34px 0;
   text-align:center;
   background:white;
-  border-top:1px solid rgba(0,0,0,0.08);
+  border-top:1px solid rgba(0,0,0,.1);
   font-size:14px;
 }
 
-footer a{
-  color:var(--rose);
-  text-decoration:none;
-  font-weight:600;
-}
-
-footer a:hover{
-  text-decoration:underline;
-}
-
-/* RESPONSIVE */
 @media(max-width:900px){
-  .grid-3{grid-template-columns:1fr;}
-  .gallery{grid-template-columns:1fr;}
-  .formations-grid{grid-template-columns:1fr;}
-  .hero h1{font-size:40px;}
-}
-
-/* NAV MOBILE */
-@media(max-width:768px){
-  nav{
-    position:fixed;
-    top:60px;
-    right:0;
-    width:70%;
-    max-width:260px;
-    background:#fff6fb;
-    box-shadow:-6px 0 20px rgba(0,0,0,0.12);
-    transform:translateX(100%);
-    transition:transform .2s ease-out;
-  }
-  nav.open{
-    transform:translateX(0);
-  }
-  nav ul{
-    flex-direction:column;
-    align-items:flex-start;
-    padding:20px;
-    gap:16px;
-  }
-  .hamburger{
-    display:flex;
-  }
+  .grid-3{grid-template-columns:1fr}
+  .hero h1{font-size:40px}
 }
 </style>
 </head>
@@ -367,43 +215,28 @@ footer a:hover{
 <header>
   <div class="container navbar">
     <a class="logo" href="#">Sweety Beauty</a>
-
-    <nav id="main-nav">
+    <nav>
       <ul>
         <li><a href="#prestations">Prestations</a></li>
         <li><a href="#realisations">Réalisations</a></li>
-        <li><a href="#formations">Formations</a></li>
-        <li><a href="#apropos">À propos</a></li>
-        <li><a href="#faq">FAQ</a></li>
-        <li><a href="#confidentialite">Confidentialité</a></li>
       </ul>
     </nav>
-
-    <a href="https://calendar.app.google/MwHuWemHgWAbLLiV6" target="_blank" class="btn-primary">
-      Réserver
-    </a>
-
-    <button class="hamburger" id="hamburger" aria-label="Menu mobile">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="https://calendar.app.google/MwHuWemHgWAbLLiV6" target="_blank" class="btn-primary">Réserver</a>
   </div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
   <div class="container">
     <h1>Beauté • Esthétique • Bien-être</h1>
-    <p>Votre beauté, notre passion – épilation, cils, soins visage, minceur & formations en Guadeloupe.</p>
-    <a href="https://calendar.app.google/MwHuWemHgWAbLLiV6" target="_blank" class="btn-primary">
-      Réserver en ligne
-    </a>
+    <p>Votre beauté, notre passion – Guadeloupe</p>
+    <a href="https://calendar.app.google/MwHuWemHgWAbLLiV6" target="_blank" class="btn-primary">Réserver en ligne</a>
   </div>
 </section>
 
-<!-- PRESTATIONS / TARIFS COMPLETS -->
-<section id="prestations" class="container prestations">
+<!-- ================= PRESTATIONS & TARIFS (TOUT EST LA) ================= -->
+<section id="prestations" class="container" style="padding:70px 0">
   <h2 class="section-title">Prestations & Tarifs</h2>
-  <p class="section-subtitle">Tarifs indicatifs, à confirmer lors de la prise de rendez-vous.</p>
+  <p class="section-subtitle">Tarifs indicatifs</p>
 
   <div class="grid-3">
 
@@ -452,14 +285,14 @@ footer a:hover{
         <li><span>Barbe</span><span class="price">19 €</span></li>
       </ul>
 
-      <h3 style="margin-top:18px;">Coiffure Locks (à partir de)</h3>
+      <h3 style="margin-top:18px;">Coiffure Locks</h3>
       <ul>
         <li><span>Traitement locks</span><span class="price">70 €</span></li>
-        <li><span>Coiffure locks S</span><span class="price">60 €</span></li>
-        <li><span>Coiffure locks M</span><span class="price">70 €</span></li>
-        <li><span>Coiffure locks L</span><span class="price">85 €</span></li>
-        <li><span>Coiffure locks XL</span><span class="price">95 €</span></li>
-        <li><span>Coiffure locks XXL</span><span class="price">105 €</span></li>
+        <li><span>Locks S</span><span class="price">60 €</span></li>
+        <li><span>Locks M</span><span class="price">70 €</span></li>
+        <li><span>Locks L</span><span class="price">85 €</span></li>
+        <li><span>Locks XL</span><span class="price">95 €</span></li>
+        <li><span>Locks XXL</span><span class="price">105 €</span></li>
       </ul>
     </div>
 
@@ -467,7 +300,7 @@ footer a:hover{
     <div class="card">
       <h3>Extensions de Cils & Minceur</h3>
 
-      <h4>Extensions – Bouquet</h4>
+      <h4>Bouquet</h4>
       <ul>
         <li><span>Pose</span><span class="price">30 €</span></li>
         <li><span>Volume 1</span><span class="price">30 €</span></li>
@@ -475,7 +308,7 @@ footer a:hover{
         <li><span>Volume 3</span><span class="price">55 €</span></li>
       </ul>
 
-      <h4>Extensions – Cil à cil</h4>
+      <h4>Cil à cil</h4>
       <ul>
         <li><span>Volume 1</span><span class="price">80 €</span></li>
         <li><span>Volume 2</span><span class="price">110 €</span></li>
@@ -484,13 +317,13 @@ footer a:hover{
 
       <h4>Minceur</h4>
       <ul>
-        <li><span>Palpé-roulé / séance</span><span class="price">70 €</span></li>
-        <li><span>Maderothérapie / séance</span><span class="price">90 €</span></li>
-        <li><span>Cryothérapie / séance</span><span class="price">95 €</span></li>
+        <li><span>Palpé-roulé</span><span class="price">70 €</span></li>
+        <li><span>Maderothérapie</span><span class="price">90 €</span></li>
+        <li><span>Cryothérapie</span><span class="price">95 €</span></li>
         <li><span>Suivi alimentaire</span><span class="price">40 €</span></li>
       </ul>
 
-      <h4>Skin Care (Soins visage)</h4>
+      <h4>Soins visage</h4>
       <ul>
         <li><span>Sweet Skin S</span><span class="price">55 €</span></li>
         <li><span>Sweet Skin M</span><span class="price">65 €</span></li>
@@ -503,155 +336,22 @@ footer a:hover{
   </div>
 </section>
 
-<!-- REALISATIONS -->
-<section id="realisations" class="container realisations">
+<section id="realisations" class="container" style="padding:70px 0">
   <h2 class="section-title">Réalisations</h2>
-  <p class="section-subtitle">Quelques aperçus de notre travail, réalisés avec passion.</p>
+  <p class="section-subtitle">Notre savoir-faire en images</p>
 
-  <div class="gallery">
-    <div class="gallery-item">
-      <iframe src="https://www.canva.com/design/DAG6XwSfd14/MD2sdR0gzWdkcMnzI2tKXw/view?embed" loading="lazy"></iframe>
-    </div>
-    <div class="gallery-item">
-      <iframe src="https://www.canva.com/design/DAG6cz1cXzk/6QOCfWW6b3WFnsEwwH26uA/view?embed" loading="lazy"></iframe>
-    </div>
-    <div class="gallery-item">
-      <iframe src="https://www.canva.com/design/DAG6X5MGEdA/pb-qhklVlb3ISXgf9aTezg/view?embed" loading="lazy"></iframe>
-    </div>
-    <div class="gallery-item">
-      <iframe src="https://www.canva.com/design/DAG6X8fQa2k/drUsdhV4yIK2Sy9Csrl6nA/view?embed" loading="lazy"></iframe>
-    </div>
+  <div class="fade-gallery">
+    <iframe src="https://www.canva.com/design/DAG6XwSfd14/MD2sdR0gzWdkcMnzI2tKXw/view?embed"></iframe>
+    <iframe src="https://www.canva.com/design/DAG6cz1cXzk/6QOCfWW6b3WFnsEwwH26uA/view?embed"></iframe>
+    <iframe src="https://www.canva.com/design/DAG6X5MGEdA/pb-qhklVlb3ISXgf9aTezg/view?embed"></iframe>
+    <iframe src="https://www.canva.com/design/DAG6X8fQa2k/drUsdhV4yIK2Sy9Csrl6nA/view?embed"></iframe>
   </div>
 </section>
 
-<!-- FORMATIONS -->
-<section id="formations" class="container section-wrapper">
-  <h2 class="section-title">Formations Professionnelles</h2>
-  <p class="section-subtitle">Devenez experte en beauté grâce à nos programmes intensifs.</p>
-
-  <div class="formations-grid">
-
-    <div class="info-card">
-      <h3>Formation Extensions de Cils</h3>
-      <p>Maîtrisez l’art du cil à cil et des volumes. Théorie, hygiène, pratique sur modèle, mapping, remplissage et dépose.</p>
-      <p><strong>Durée :</strong> 2 à 3 jours – <strong>Certification</strong> remise en fin de formation.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Formation Épilation Orientale</h3>
-      <p>Techniques traditionnelles au fil et à la cire orientale. Gestes précis, rapidité d’exécution, zones visage et corps.</p>
-      <p><strong>Durée :</strong> 1 à 2 jours – <strong>Kit de démarrage</strong> inclus.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- A PROPOS -->
-<section id="apropos" class="container section-wrapper">
-  <h2 class="section-title">À propos de Sweety Beauty</h2>
-  <p class="section-subtitle">Un espace pensé pour vous, pour votre bien-être et votre confiance.</p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <p>Sweety Beauty est un salon de beauté situé en Guadeloupe, spécialisé en épilation, soins du visage, extensions de cils, minceur et formations professionnelles.</p>
-      <p>Nous mettons l’accent sur l’écoute, l’hygiène, la qualité des produits et un accompagnement personnalisé, que vous veniez pour un soin ou pour apprendre un métier passion.</p>
-      <p>Chaque rendez-vous est un moment pour vous, dans une ambiance douce, chaleureuse et bienveillante.</p>
-    </div>
-  </div>
-</section>
-
-<!-- FAQ -->
-<section id="faq" class="container section-wrapper">
-  <h2 class="section-title">FAQ</h2>
-  <p class="section-subtitle">Les réponses aux questions les plus fréquentes.</p>
-
-  <div class="info-grid">
-
-    <div class="info-card">
-      <h3>Comment prendre rendez-vous ?</h3>
-      <p>En cliquant sur le bouton “Réserver” en haut du site ou dans le bandeau d’accueil. Vous serez redirigé vers notre agenda en ligne.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Quels sont vos horaires ?</h3>
-      <p>Nous travaillons uniquement sur rendez-vous, selon les disponibilités. Les créneaux proposés dans l’agenda sont mis à jour régulièrement.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Où êtes-vous situés ?</h3>
-      <p>Le salon se trouve en Guadeloupe. L’adresse exacte est communiquée lors de la confirmation du rendez-vous, pour préserver la tranquillité des clientes.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Quels moyens de paiement acceptez-vous ?</h3>
-      <p>Nous acceptons les paiements en espèces, carte bancaire et Lydia.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Proposez-vous des formations ?</h3>
-      <p>Oui, plusieurs formations sont disponibles (extensions de cils, épilation, etc.). Chaque formation inclut un support pédagogique et une attestation en fin de parcours.</p>
-    </div>
-
-  </div>
-</section>
-
-<!-- POLITIQUE DE CONFIDENTIALITÉ -->
-<section id="confidentialite" class="container section-wrapper">
-  <h2 class="section-title">Politique de Confidentialité</h2>
-  <p class="section-subtitle">Nous protégeons vos données personnelles.</p>
-
-  <div class="info-grid">
-
-    <div class="info-card">
-      <h3>Données collectées</h3>
-      <p>Nous collectons uniquement les informations nécessaires à la prise de rendez-vous : nom, coordonnées, et éventuellement vos préférences de prestation.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Utilisation des données</h3>
-      <p>Vos données servent exclusivement à gérer vos rendez-vous, vous contacter si nécessaire et assurer le bon déroulement de la prestation.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Partage et conservation</h3>
-      <p>Vos données ne sont ni revendues ni cédées à des tiers. Elles sont conservées au maximum 12 mois après votre dernier rendez-vous, puis supprimées.</p>
-    </div>
-
-    <div class="info-card">
-      <h3>Vos droits</h3>
-      <p>Conformément au RGPD, vous pouvez demander l’accès, la modification ou la suppression de vos données en nous écrivant à :<br>
-        <strong>sweetybeautyguadeloupe@gmail.com</strong>
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- FOOTER -->
 <footer>
-  <p>Contact : <a href="mailto:sweetybeautyguadeloupe@gmail.com">sweetybeautyguadeloupe@gmail.com</a></p>
-  <p>Design par <strong>TRK Design</strong></p>
-  <p>© 2025 Sweety Beauty – Tous droits réservés</p>
+  <p>Contact : sweetybeautyguadeloupe@gmail.com</p>
+  <p>© 2025 Sweety Beauty</p>
 </footer>
-
-<!-- JS HAMBURGER -->
-<script>
-const hamburger = document.getElementById('hamburger');
-const nav = document.getElementById('main-nav');
-
-hamburger.addEventListener('click', () => {
-  hamburger.classList.toggle('is-active');
-  nav.classList.toggle('open');
-});
-
-// Fermer le menu quand on clique sur un lien (mobile)
-nav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger.classList.remove('is-active');
-    nav.classList.remove('open');
-  });
-});
-</script>
 
 </body>
 </html>
